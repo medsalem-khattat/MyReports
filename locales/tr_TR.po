@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Kaya Zeren <kayazeren@gmail.com>, 2013,2015-2016,2018,2020-2022
-# Nelly Mahu-Lasson <nini.lasson@orange.fr>, 2013
+# Mohamed Salem KHATTAT <nini.lasson@orange.fr>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: GLPI Project - reports plugin\n"

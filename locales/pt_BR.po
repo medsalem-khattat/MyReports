@@ -5,7 +5,7 @@
 # Translators:
 # Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2021
 # marciofoz <marciofoz@gmail.com>, 2018
-# Nelly Mahu-Lasson <nini.lasson@orange.fr>, 2013
+# Mohamed Salem KHATTAT <nini.lasson@orange.fr>, 2013
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
 msgid ""
 msgstr ""
