@@ -36,7 +36,7 @@ include ("../../../../inc/includes.php");
 
 includeLocales("equipmentbygroups");
 //TRANS: The name of the report = List all devices of a group, ordered by users
-Html::header(__('equipmentbygroups_report_title', 'reports'), $_SERVER['PHP_SELF'], "utils", "report");
+Html::header(__('equipmentbygroups_report_title', MyReports), $_SERVER['PHP_SELF'], "utils", "report");
 
 Report::title();
 
@@ -91,7 +91,7 @@ function displaySearchForm() {
 
    // Display Reset search
    echo "<td>";
-   echo "<a href='" . Plugin::getPhpDir('reports')."/report/equipmentbygroups/equipmentbygroups.php?reset_search=reset_search'>".
+   echo "<a href='" . Plugin::getPhpDir(MyReports)."/report/equipmentbygroups/equipmentbygroups.php?reset_search=reset_search'>".
          "<img title='" . __s('Blank') . "' alt='" . __s('Blank') . "' src='" .
          $CFG_GLPI["root_doc"] . "/pics/reset.png' class='calendrier'></a>";
    echo "</td>";

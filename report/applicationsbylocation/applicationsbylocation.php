@@ -37,16 +37,16 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Applications by locations and versions
-$report = new PluginReportsAutoReport(__('applicationsbylocation_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('applicationsbylocation_report_title', MyReports));
 
 $softwarecategories = new PluginReportsSoftwareCategoriesCriteria($report, 'softwarecategories',
                                                                   __('Software category'));
 $softwarecategories->setSqlField("`glpi_softwarecategories`.`id`");
 
-$software = new PluginReportsSoftwareCriteria($report, 'software', __('Applications', 'reports'));
+$software = new PluginReportsSoftwareCriteria($report, 'software', __('Applications', MyReports));
 $software->setSqlField("`glpi_softwares`.`id`");
 
-$statecpt = new PluginReportsStatusCriteria($report, 'statecpt', __('Computer status', 'reports'));
+$statecpt = new PluginReportsStatusCriteria($report, 'statecpt', __('Computer status', MyReports));
 $statecpt->setSqlField("`glpi_computers`.`states_id`");
 
 $location = new PluginReportsLocationCriteria($report, 'location', _n('Location', 'Locations', 2));

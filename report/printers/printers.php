@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Printers
-$report = new PluginReportsAutoReport(__('printers_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('printers_report_title', MyReports));
 
 // Definition of the criteria
 $grpcrit = new PluginReportsGroupCriteria($report, 'glpi_printers.groups_id', '', 'is_itemgroup');
@@ -68,12 +68,12 @@ if ($report->criteriasValidated()) {
             new PluginReportsColumnLink('user', __('User'), 'User'),
             new PluginReportsColumnLink('groupe', __('Group'), 'Group',
                                         ['sorton' => 'glpi_groups.name']),
-            new PluginReportsColumnInteger('compgrp', __('Computers in the group', 'reports')),
-            new PluginReportsColumnInteger('usergrp', __('Users in the group', 'reports')),
+            new PluginReportsColumnInteger('compgrp', __('Computers in the group', MyReports)),
+            new PluginReportsColumnInteger('usergrp', __('Users in the group', MyReports)),
             new PluginReportsColumnLink('location', __('Location'), 'Location',
                                         ['sorton' => 'glpi_locations.completename']),
-            new PluginReportsColumnInteger('comploc', __('Computers in the location', 'reports')),
-            new PluginReportsColumnInteger('userloc', __('Users in the location', 'reports'))];
+            new PluginReportsColumnInteger('comploc', __('Computers in the location', MyReports)),
+            new PluginReportsColumnInteger('userloc', __('Users in the location', MyReports))];
 
    $report->setColumns($cols);
 

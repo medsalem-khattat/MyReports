@@ -51,7 +51,7 @@ $dbu = new DbUtils();
  *
  */
 //TRANS: The name of the report = Financial information
-$report = new PluginReportsAutoReport(__('infocom_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('infocom_report_title', MyReports));
 
 $ignored = ['Cartridge', 'CartridgeItem', 'Consumable', 'ConsumableItem', 'Software', 'Line',
             'Certificate', 'Appliance', 'Domain', 'Item_DeviceSimcard', 'SoftwareLicense'];

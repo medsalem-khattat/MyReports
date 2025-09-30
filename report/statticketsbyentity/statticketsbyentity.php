@@ -39,7 +39,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Helpdesk requesters and tickets by entity
-$report = new PluginReportsAutoReport(__('statticketsbyentity_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('statticketsbyentity_report_title', MyReports));
 
 //Report's search criterias
 $prof = new PluginReportsDropdownCriteria($report, 'profiles_id', 'glpi_profiles',
@@ -55,15 +55,15 @@ if ($report->criteriasValidated()) {
    //Names of the columns to be displayed
    $cols = [new PluginReportsColumn('name', __('Entity'),
                                     ['sorton' => '`glpi_entities`.`completename`']),
-            new PluginReportsColumnInteger('nbusers', __('Users count', 'reports'),
+            new PluginReportsColumnInteger('nbusers', __('Users count', MyReports),
                                            ['withtotal' => true,
                                             'sorton'    => 'nbusers']),
-            new PluginReportsColumnInteger('number', __('Tickets count', 'reports'),
+            new PluginReportsColumnInteger('number', __('Tickets count', MyReports),
                                            ['withtotal' => true,
                                             'sorton'    => 'number']),
-            new PluginReportsColumnDateTime('mindate', __('Older', 'reports'),
+            new PluginReportsColumnDateTime('mindate', __('Older', MyReports),
                                             ['sorton' => 'mindate']),
-            new PluginReportsColumnDateTime('maxdate', __('Newer', 'reports'),
+            new PluginReportsColumnDateTime('maxdate', __('Newer', MyReports),
                                             ['sorton' => 'maxdate'])];
    $report->setColumns($cols);
 

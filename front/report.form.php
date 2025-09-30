@@ -33,9 +33,9 @@ include_once ("../../../inc/includes.php");
 
 Session::checkRight('profile', READ);
 
-Plugin::load('reports', true);
+Plugin::load(MyReports, true);
 
-Html::header(__('Reports plugin configuration', 'reports'), $_SERVER['PHP_SELF'], 'config',
+Html::header(__('Reports plugin configuration', MyReports), $_SERVER['PHP_SELF'], 'config',
              'plugins');
 
 require_once "../inc/profile.class.php";
@@ -61,8 +61,8 @@ $tab = $prof->updatePluginRights();
 
 echo "<form method='post' action=\"".$_SERVER["PHP_SELF"]."\">";
 echo "<table class='tab_cadre'>";
-echo "<tr><th class='center'>".__('Reports plugin configuration', 'reports')."</th></tr>";
-echo "<tr><th>". __('Rights management by report', 'reports'). "</th></tr>\n";
+echo "<tr><th class='center'>".__('Reports plugin configuration', MyReports)."</th></tr>";
+echo "<tr><th>". __('Rights management by report', MyReports). "</th></tr>\n";
 
 echo "<tr class='tab_bg_1'><td>".__('Report', 'Reports', 1). "&nbsp; ";
 
@@ -74,7 +74,7 @@ echo "<select name='report'>";
 $plugname = [];
 $rap      = [];
 foreach ($tab as $key => $plug) {
-   $mod = (($plug == 'reports') ? $key : $plug.'_'.$key);
+   $mod = (($plug == MyReports) ? $key : $plug.'_'.$key);
    if (!isset($plugname[$plug])) {
       // Retrieve the plugin name
       $function        = "plugin_version_$plug";

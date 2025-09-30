@@ -38,7 +38,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Time before equipment start-up
-$report = new PluginReportsAutoReport(__('iteminstall_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('iteminstall_report_title', MyReports));
 
 //Report's search criterias
 $date = new PluginReportsDateIntervalCriteria($report, 'buy_date');

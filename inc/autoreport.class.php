@@ -216,7 +216,7 @@ class PluginReportsAutoReport {
 
       
       $field = 'plugin_reports_'.$this->name;
-      if ($this->plug != 'reports') {
+      if ($this->plug != MyReports) {
           $field = 'plugin_reports_'.$this->plug."_".$this->name;
       }
       Session::checkRight($field, READ);
@@ -438,7 +438,7 @@ class PluginReportsAutoReport {
       }
 
       $field = 'plugin_reports_'.$this->name;
-      if ($this->plug != 'reports') {
+      if ($this->plug != MyReports) {
          $field = 'plugin_reports_'.$this->plug."_".$this->name;
       }
       Session::checkRight($field, READ);
@@ -448,7 +448,7 @@ class PluginReportsAutoReport {
          echo "<div class='center'>";
          echo "<form method='post' name='form' action='".$_SERVER['PHP_SELF']."'>";
          echo "<table class='tab_cadre_fixe'>";
-         echo "<tr><th colspan='6'>" . __('Search criteria', 'reports');
+         echo "<tr><th colspan='6'>" . __('Search criteria', MyReports);
 
          //If form is validated, then display the bookmark button
          if ($this->criteriasValidated()) {

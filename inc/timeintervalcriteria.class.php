@@ -66,7 +66,7 @@ class PluginReportsTimeIntervalCriteria extends PluginReportsAutoCriteria {
 
       $this->getReport()->startColumn();
 
-      printf(__('Start at %s'), __('Number pending', 'reports'));
+      printf(__('Start at %s'), __('Number pending', MyReports));
       echo "&nbsp;&nbsp;";
       $this->getReport()->endColumn();
 
@@ -75,7 +75,7 @@ class PluginReportsTimeIntervalCriteria extends PluginReportsAutoCriteria {
       $this->getReport()->endColumn();
 
       $this->getReport()->startColumn();
-      printf(__('End at %s'), __('Number pending', 'reports'));
+      printf(__('End at %s'), __('Number pending', MyReports));
       echo "&nbsp;&nbsp;";
       $this->getReport()->endColumn();
 
@@ -106,9 +106,9 @@ class PluginReportsTimeIntervalCriteria extends PluginReportsAutoCriteria {
       $title = $this->getCriteriaLabel($this->getName());
       if (empty($title)) {
          if ($this->getName() == 'date-interval') {
-            $title = __('Date interval', 'reports');
+            $title = __('Date interval', MyReports);
          } if ($this->getName() == 'time-interval') {
-            $title = __('Time interval', 'reports');
+            $title = __('Time interval', MyReports);
          }
       }
       return sprintf(__('%1$s (%2$s)'), "&nbsp;" . $title,

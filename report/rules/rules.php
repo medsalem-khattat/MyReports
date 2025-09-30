@@ -46,7 +46,7 @@ function plugin_reports_rulelist ($rulecollection, $title) {
    echo "<table class='tab_cadre' cellpadding='5'>\n";
    echo "<tr><th colspan='6'><a href='".$_SERVER["PHP_SELF"]."'>" .
          //TRANS: The name of the report = Rule's catalog
-         __('rules_report_title', 'reports') . "</a> - " . $title . "</th></tr>";
+         __('rules_report_title', MyReports) . "</a> - " . $title . "</th></tr>";
 
    echo "<tr><th>".__('Name')."</th>";
    echo "<th>".__('Description')."</th>";
@@ -94,7 +94,7 @@ function plugin_reports_rulelist ($rulecollection, $title) {
    echo "</table></div>\n";
 }
 
-Html::header(__("rules_report_title", 'reports'), $_SERVER['PHP_SELF'], "utils", "report");
+Html::header(__("rules_report_title", MyReports), $_SERVER['PHP_SELF'], "utils", "report");
 
 Report::title();
 
@@ -111,7 +111,7 @@ if ($type == "ldap") {
 } else {
    echo "<div class='center'>";
    echo "<table class='tab_cadre' cellpadding='5'>\n";
-   echo "<tr><th>". sprintf(__('%1$s - %2$s'), __("rules_report_title", 'reports'), __('Rule type')).
+   echo "<tr><th>". sprintf(__('%1$s - %2$s'), __("rules_report_title", MyReports), __('Rule type')).
         "</th></tr>";
 
 

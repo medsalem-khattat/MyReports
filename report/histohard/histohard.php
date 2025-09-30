@@ -42,20 +42,20 @@ $dbu      = new DbUtils();
 $computer->checkGlobal(READ);
 
 //TRANS: The name of the report = History of last hardware's installations
-Html::header(__("histohard_report_title", 'reports'), $_SERVER['PHP_SELF'], "utils","report");
+Html::header(__("histohard_report_title", MyReports), $_SERVER['PHP_SELF'], "utils","report");
 
 Report::title();
 
 echo "<div class='center'>";
 echo "<table class='tab_cadrehov'>\n";
 echo "<tr class='tab_bg_1 center'>".
-     "<th colspan='5'>". __("History of last hardware's installations", 'reports')."</th></tr>\n";
+     "<th colspan='5'>". __("History of last hardware's installations", MyReports)."</th></tr>\n";
 
-echo "<tr><th>".__('Date of inventory', 'reports'). "</th>" .
+echo "<tr><th>".__('Date of inventory', MyReports). "</th>" .
       "<th>". __('User') . "</th>".
       "<th>". __('Network device') . "</th>".
       "<th>". __('Field') . "</th>".
-      "<th>". __('Modification', 'reports') . "</th></tr>\n";
+      "<th>". __('Modification', MyReports) . "</th></tr>\n";
 
 $sql = "SELECT `glpi_logs`.`date_mod` AS dat, `linked_action`, `itemtype`, `itemtype_link`,
                `old_value`, `new_value`, `glpi_computers`.`id` AS cid, `name`, `user_name`,
@@ -152,6 +152,6 @@ foreach ($result as $data) {
 if (!empty($prev)) {
    echo "</td></tr>\n";
 }
-echo "</table><p>".__('The list is limited to 100 items and 21 days', 'reports')."</p></div>\n";
+echo "</table><p>".__('The list is limited to 100 items and 21 days', MyReports)."</p></div>\n";
 
 Html::footer();

@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Detailed report of software installation by status
-$report = new PluginReportsAutoReport(__('softnotinstalled_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('softnotinstalled_report_title', MyReports));
 $soft   = new PluginReportsTextCriteria($report, 'software', _n('Software', 'Software', 1));
 $soft->setSqlField("`glpi_softwares`.`name`");
 

@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = List of groups and members
-$report = new PluginReportsAutoReport(__('listgroups_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('listgroups_report_title', MyReports));
 //$group = new GroupCriteria($report);
 
 $report->setColumns([new PluginReportsColumn('completename', __('Entity')),

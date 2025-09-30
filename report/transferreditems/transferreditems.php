@@ -38,7 +38,7 @@ include("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = List of transfered objects
-$report= new PluginReportsAutoReport(__('transferreditems_report_title', 'reports'));
+$report= new PluginReportsAutoReport(__('transferreditems_report_title', MyReports));
 
 // Search criterias
 new PluginReportsDateIntervalCriteria($report, "`glpi_logs`.`date_mod`");
@@ -64,9 +64,9 @@ if($report->criteriasValidated()) {
    $columns = [new PluginReportsColumnLink('items_id', __('Name'), $itemtype,
                                            ['with_comment' => 1]),
                new PluginReportsColumn('otherserial', __('Inventory number')),
-               new PluginReportsColumn('old_value', __('Source entity', 'reports')),
-               new PluginReportsColumn('new_value', __('Target entity', 'reports')),
-               new PluginReportsColumnDateTime('date_mod', __('Transfert date', 'reports'))];
+               new PluginReportsColumn('old_value', __('Source entity', MyReports)),
+               new PluginReportsColumn('new_value', __('Target entity', MyReports)),
+               new PluginReportsColumnDateTime('date_mod', __('Transfert date', MyReports))];
    $report->setColumns($columns);
 
    $otherserial = '';

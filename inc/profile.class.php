@@ -49,7 +49,7 @@ class PluginReportsProfile extends Profile {
                                        ['canedit'       => $canedit,
                                         'default_class' => 'tab_bg_2',
                                         'title'         => __('Rights management by profil',
-                                                                   'reports')]);
+                                                                   MyReports)]);
       if ($canedit) {
          echo "<div class='center'>";
          echo Html::hidden('id', ['value' => $prof->getField('id')]);
@@ -82,15 +82,15 @@ class PluginReportsProfile extends Profile {
       }
 
       echo "<table class='tab_cadre'>\n";
-      echo "<tr><th colspan='2'>".__('Profils rights', 'reports')."</th></tr>\n";
+      echo "<tr><th colspan='2'>".__('Profils rights', MyReports)."</th></tr>\n";
 
       foreach ($DB->request('glpi_profiles',['SELECT' => ['id', 'name'],
                                              'ORDER'  => 'name']) as $data) {
          echo "<tr class='tab_bg_1'><td>" . $data['name'] . "&nbsp: </td><td>";
 
-         $profrights = ProfileRight::getProfileRights($data['id'], ['statistic', 'reports']);
+         $profrights = ProfileRight::getProfileRights($data['id'], ['statistic', MyReports]);
          $canstat    = (isset($profrights['statistic']) && $profrights['statistic']);
-         $canreport  = (isset($profrights['reports'])   && $profrights['reports']);
+         $canreport  = (isset($profrights[MyReports])   && $profrights[MyReports]);
 
          if ((isStat($report) && $canstat)
              || (!isStat($report) && $canreport)) {
@@ -109,9 +109,9 @@ class PluginReportsProfile extends Profile {
       }
       echo "<tr class='tab_bg_4'><td colspan='2'>* ";
       if (isStat($report)) {
-         echo __('No right on Assistance / Statistics', 'reports');
+         echo __('No right on Assistance / Statistics', MyReports);
       } else {
-         echo __('No right on Tools / Reports', 'reports');
+         echo __('No right on Tools / Reports', MyReports);
       }
       echo "</tr>";
 
@@ -170,7 +170,7 @@ class PluginReportsProfile extends Profile {
 
       $rights = [];
       foreach ($reports as $report => $plug) {
-         if ($plug == 'reports') {
+         if ($plug == MyReports) {
             $rights["plugin_reports_$report"] = 1;
          } else {
             $rights["plugin_reports_${plug}_${report}"] = 1;
@@ -226,7 +226,7 @@ class PluginReportsProfile extends Profile {
       $rights = [];
 
       foreach(searchReport() as $key => $plug) {
-         $mod = (($plug == 'reports') ? $key : "${plug}_${key}");
+         $mod = (($plug == MyReports) ? $key : "${plug}_${key}");
          if (!isset($plugname[$plug])) {
             // Retrieve the plugin name
             $function         = "plugin_version_$plug";
@@ -234,7 +234,7 @@ class PluginReportsProfile extends Profile {
             $plugname[$plug]  = $tmp['name'];
          }
          $field = 'plugin_reports_'.$key;
-         if ($plug != 'reports') {
+         if ($plug != MyReports) {
             $field = 'plugin_reports_'.$plug."_".$key;
          }
 
@@ -338,7 +338,7 @@ class PluginReportsProfile extends Profile {
       if ($item->getType() == 'Profile') {
          if ($item->getField('interface') == 'central') {
             $nb = 0;
-            if (Session::haveRight('reports', READ)) {
+            if (Session::haveRight(MyReports, READ)) {
                if ($_SESSION['glpishow_count_on_tabs']) {
 
                   $query = $DB->request('glpi_profilerights',

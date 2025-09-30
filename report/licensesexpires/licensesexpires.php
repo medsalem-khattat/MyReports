@@ -36,9 +36,9 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Licenses by expiration date
-$report = new PluginReportsAutoReport(__('licensesexpires_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('licensesexpires_report_title', MyReports));
 
-$report->setColumns(['expire'       => __('Valid to', 'reports'),
+$report->setColumns(['expire'       => __('Valid to', MyReports),
                      'name'         => __('License name'),
                      'software'     => sprintf(__('%1$s - %2$s'), _n('Software', 'Software', 1),
                                                __('Purchase version')),

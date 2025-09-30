@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Tickets no closed, sorted by priority
-$report = new PluginReportsAutoReport(__('statticketsbypriority_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('statticketsbypriority_report_title', MyReports));
 
 //Report's search criterias
 new PluginReportsDateIntervalCriteria($report, '`glpi_tickets`.`date`', __('Opening date'));

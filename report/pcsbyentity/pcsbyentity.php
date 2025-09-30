@@ -207,7 +207,7 @@ $dbu = new DbUtils();
 
 Session::checkRight("plugin_reports_pcsbyentity", READ);
 //TRANS: The name of the report = Number of items by entity
-Html::header(__('pcsbyentity_report_title', 'reports'), $_SERVER['PHP_SELF'], "utils", "report");
+Html::header(__('pcsbyentity_report_title', MyReports), $_SERVER['PHP_SELF'], "utils", "report");
 
 Report::title();
 
@@ -216,7 +216,7 @@ echo "<div class='center'>";
 // ---------- Form ------------
 echo "<form action='".$_SERVER["PHP_SELF"]."' method='post'>";
 echo "<table class='tab_cadre' cellpadding='5'>\n";
-echo "<tr class='tab_bg_1 center'><th colspan='2'>" . __('Number of items by entity', 'reports') .
+echo "<tr class='tab_bg_1 center'><th colspan='2'>" . __('Number of items by entity', MyReports) .
       "</th></tr>\n";
 echo "<tr class='tab_bg_1'><td class='right'>" . __('Item type') ."</td>";
 echo "<td><select name='type'><option value=''>".Dropdown::EMPTY_VALUE."</option>";
@@ -242,11 +242,11 @@ foreach ($choix as $id => $name) {
 echo "</select></td></tr>\n";
 
 if (count($_SESSION["glpiactiveentities"]) > 1) {
-   echo "<tr class='tab_bg_1'><td class='right'>" . __('Display', 'reports') ."</td>";
-   echo "<td><select name='sort'><option value='0'>".__('Entity tree', 'reports')."</option>";
+   echo "<tr class='tab_bg_1'><td class='right'>" . __('Display', MyReports) ."</td>";
+   echo "<td><select name='sort'><option value='0'>".__('Entity tree', MyReports)."</option>";
    $sel = (isset($_POST["sort"]) && $_POST["sort"] ? "selected='selected'" : "");
 
-   echo "<option value='1' $sel>".__('Sort by count', 'reports')."</option>".
+   echo "<option value='1' $sel>".__('Sort by count', MyReports)."</option>".
         "</select></td></tr>\n";
 }
 
@@ -265,14 +265,14 @@ if (isset($_POST["type"]) && $_POST["type"] != '') {
 
    echo "<tr><th>".__('Entity'). "</th>" .
          "<th>&nbsp;" . __('Total') . "&nbsp;</th>" .
-         "<th>&nbsp;" . __('Unknown', 'reports') . "&nbsp;</th>";
+         "<th>&nbsp;" . __('Unknown', MyReports) . "&nbsp;</th>";
 
    $sql = "SELECT `id`, `name`
            FROM `glpi_states`
            ORDER BY `id`";
    $result = $DB->query($sql);
 
-   $header[0] = __('Unknown', 'reports');
+   $header[0] = __('Unknown', MyReports);
    while ($data = $DB->fetchArray($result)) {
       $header[$data["id"]] = $data["name"];
       echo "<th>&nbsp;" . $data["name"] . "&nbsp;</th>";
@@ -286,7 +286,7 @@ if (isset($_POST["type"]) && $_POST["type"] != '') {
    }
    echo "</table></div>";
 } elseif (isset($_POST["type"]) && $_POST["type"] == '') {
-   echo "<p class='center red'>".__('Selection of type is mandatory', 'reports')."</p>";
+   echo "<p class='center red'>".__('Selection of type is mandatory', MyReports)."</p>";
 }
 
 Html::footer();

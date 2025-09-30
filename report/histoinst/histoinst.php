@@ -43,7 +43,7 @@ $software = new Software();
 $software->checkGlobal(READ);
 
 //TRANS: The name of the report = History of last software's installations
-Html::header(__('histoinst_report_title', 'reports'), $_SERVER['PHP_SELF'], "utils", "report");
+Html::header(__('histoinst_report_title', MyReports), $_SERVER['PHP_SELF'], "utils", "report");
 
 Report::title();
 
@@ -99,6 +99,6 @@ foreach ($result as $data) {
 if (!empty($prev)) {
    echo "</td></tr>\n";
 }
-echo "</table><p>". __('The list is limited to 200 items and 21 days', 'reports')."</p></div>\n";
+echo "</table><p>". __('The list is limited to 200 items and 21 days', MyReports)."</p></div>\n";
 
 Html::footer();

@@ -57,11 +57,11 @@ function searchReport($all = false) {
  * Include locales for a specific report
  *
  * @param $report_name  the name of the report to use
- * @param $plugin       plugins name (default 'reports')
+ * @param $plugin       plugins name (default MyReports)
  *
  * @return boolean, true if locale found
 **/
-function includeLocales($report_name, $plugin='reports') {
+function includeLocales($report_name, $plugin=MyReports) {
    global $CFG_GLPI, $LANG;
 
    $prefix = Plugin::getPhpDir($plugin). "/report/". $report_name ."/" . $report_name;

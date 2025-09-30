@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Tickets opened at night, sorted by priority
-$report = new PluginReportsAutoReport(__('statnightticketsbypriority_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('statnightticketsbypriority_report_title', MyReports));
 
 //Report's search criterias
 new PluginReportsDateIntervalCriteria($report, '`glpi_tickets`.`date`', __('Opening date'));

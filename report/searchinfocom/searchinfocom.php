@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Search in the financial information (plural)
-$report = new PluginReportsAutoReport(__('searchinfocom_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('searchinfocom_report_title', MyReports));
 
 //Report's search criterias
 new PluginReportsDateIntervalCriteria($report, 'order_date', __('Order date'));

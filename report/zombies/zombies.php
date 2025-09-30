@@ -35,13 +35,13 @@ $DBCONNECTION_REQUIRED  = 0;
 include ("../../../../inc/includes.php");
 
 //TRANS: The name of the report = Users with no right
-$report = new PluginReportsAutoReport(__('zombies_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('zombies_report_title', MyReports));
 
 $name = new PluginReportsTextCriteria($report, 'name', __('Login'));
 
 $tab = [0 => __('No'),
         1 => __('Yes')];
-$filter = new PluginReportsArrayCriteria($report, 'tickets', __('With no ticket', 'reports'), $tab);
+$filter = new PluginReportsArrayCriteria($report, 'tickets', __('With no ticket', MyReports), $tab);
 
 //Display criterias form is needed
 $report->displayCriteriasForm();

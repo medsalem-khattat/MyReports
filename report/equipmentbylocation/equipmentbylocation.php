@@ -34,7 +34,7 @@ $DBCONNECTION_REQUIRED  = 0;
 
 include ("../../../../inc/includes.php");
 //TRANS: The name of the report = Number of equipments by location
-$report = new PluginReportsAutoReport(__('equipmentbylocation_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('equipmentbylocation_report_title', MyReports));
 
 $dbu = new DbUtils();
 

@@ -75,7 +75,7 @@ $fi_installed = $plugin->isInstalled('fusioninventory');
 echo "<form action='".$_SERVER["PHP_SELF"]."' method='post'>";
 echo "<table class='tab_cadre' cellpadding='5'>\n";
 echo "<tr class='tab_bg_1 center'>";
-echo "<th colspan='3'>".__('Duplicate computers', 'reports')."</th></tr>\n";
+echo "<th colspan='3'>".__('Duplicate computers', MyReports)."</th></tr>\n";
 
 echo "<tr class='tab_bg_1'><td class='right'>"._n('Criterion', 'Criteria', 2). "</td><td>";
 echo "<select name='crit'>";
@@ -257,8 +257,8 @@ if ($crit > 0) { // Display result
       Html::openMassiveActionsForm('massformComputer');
    }
    echo "<table class='tab_cadrehov' cellpadding='5'>" .
-      "<tr><th colspan='$colspan'>" . __('First computer', 'reports') . "</th>" .
-      "<th class='blue' colspan='$colspan'>" . __('Second computer', 'reports')."</th></tr>\n" .
+      "<tr><th colspan='$colspan'>" . __('First computer', MyReports) . "</th>" .
+      "<th class='blue' colspan='$colspan'>" . __('Second computer', MyReports)."</th></tr>\n" .
       "<tr>";
    $colspan *= 2;
 
@@ -274,7 +274,7 @@ if ($crit > 0) { // Display result
    if ($col) {
       echo "<th>$col</th>";
    }
-   echo "<th>".__('Last inventory date', 'reports')."</th>";
+   echo "<th>".__('Last inventory date', MyReports)."</th>";
 
    if ($canedit) {
       echo "<th>&nbsp;</th>";
@@ -289,7 +289,7 @@ if ($crit > 0) { // Display result
    if ($col) {
       echo "<th class='blue'>$col</th>";
    }
-   echo "<th class='blue'>".__('Last inventory date', 'reports')."</th>";
+   echo "<th class='blue'>".__('Last inventory date', MyReports)."</th>";
 
    echo "</tr>\n";
 
@@ -373,7 +373,7 @@ if ($crit > 0) { // Display result
    }
    echo "<tr class='tab_bg_4'><td class='center' colspan='$colspan'>";
    if ($i) {
-      printf(__('%1$s: %2$s'), __('Duplicate computers', 'reports'), $i);
+      printf(__('%1$s: %2$s'), __('Duplicate computers', MyReports), $i);
    } else {
       echo __('No item found');
    }

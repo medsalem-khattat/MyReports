@@ -145,9 +145,9 @@ class PluginReportsDateIntervalCriteria extends PluginReportsAutoCriteria {
       }
       if (empty($title)) {
          if ($this->getName() == 'date-interval') {
-            $title = __('Date interval', 'reports');
+            $title = __('Date interval', MyReports);
          } if ($this->getName() == 'time-interval') {
-            $title = __('Time interval', 'reports');
+            $title = __('Time interval', MyReports);
          }
       }
 

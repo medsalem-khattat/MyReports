@@ -75,7 +75,7 @@ class PluginReportsPriorityCriteria extends PluginReportsAutoCriteria {
 
       } else {
          if ($this->getParameterValue() < 0) {
-            $priority = sprintf(__('%1$s %2$s'), __('At least', 'reports'),
+            $priority = sprintf(__('%1$s %2$s'), __('At least', MyReports),
                                  Ticket::getPriorityName(abs($this->getParameterValue())));
          } else {
             $priority = Ticket::getPriorityName($this->getParameterValue());

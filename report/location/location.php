@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Location tree
-$report = new PluginReportsAutoReport(__('location_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('location_report_title', MyReports));
 
 $report->setColumns([new PluginReportsColumn('entity', __('Entity'),
                                              ['sorton' => 'entity,location']),

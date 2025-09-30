@@ -37,14 +37,14 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Not installed important software (plural)
-$report   = new PluginReportsAutoReport(__('softversioninstallations_report_title', 'reports'));
+$report   = new PluginReportsAutoReport(__('softversioninstallations_report_title', MyReports));
 
 $statever = new PluginReportsStatusCriteria($report, 'statever',
-                                            __('Software version status', 'reports'));
+                                            __('Software version status', MyReports));
 $statever->setSqlField("`glpi_softwareversions`.`states_id`");
 
 $statecpt = new PluginReportsStatusCriteria($report, 'statecpt',
-                                            __('Computer status', 'reports'));
+                                            __('Computer status', MyReports));
 $statecpt->setSqlField("`glpi_computers`.`states_id`");
 
 

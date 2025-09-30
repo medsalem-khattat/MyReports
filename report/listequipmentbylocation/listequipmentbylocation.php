@@ -36,7 +36,7 @@ include ("../../../../inc/includes.php");
 
 
 //TRANS: The name of the report = List of equipments by location
-$report = new PluginReportsAutoReport(__('listequipmentbylocation_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('listequipmentbylocation_report_title', MyReports));
 $loc    = new PluginReportsLocationCriteria($report);
 
 
@@ -74,7 +74,7 @@ if ($report->criteriasValidated() && ($loc->getParameterValue() != 0)) {
       $report->execute();
 
 } else {
-   echo "<p class='red center'>". __('Location not selected', 'reports')."</p>";
+   echo "<p class='red center'>". __('Location not selected', MyReports)."</p>";
    Html::footer();
 }
 

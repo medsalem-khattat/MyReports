@@ -35,10 +35,10 @@ $DBCONNECTION_REQUIRED  = 1;
 include ("../../../../inc/includes.php");
 
 //titre du rapport dans la liste de selection,  soit en dur ici, soit mettre à jour la variable dans les fichiers de traduction;
-$report = new PluginReportsAutoReport(__('statusertask_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('statusertask_report_title', MyReports));
 
 //critère de selection;
-$date = new PluginReportsDateIntervalCriteria($report, '`glpi_tickettasks`.`date`', __('Tasks created', 'reports'));
+$date = new PluginReportsDateIntervalCriteria($report, '`glpi_tickettasks`.`date`', __('Tasks created', MyReports));
 
 $report->displayCriteriasForm();
 
@@ -52,7 +52,7 @@ if ($report->criteriasValidated()) {
             new PluginReportsColumn('date', __('Date')),
             new PluginReportsColumn('ticketid', __('Ticket task id')),
             new PluginReportsColumn('duree', __('Duration')),
-            new PluginReportsColumn('nbretask', __('Number created tasks', 'reports')),
+            new PluginReportsColumn('nbretask', __('Number created tasks', MyReports)),
             new PluginReportsColumn('total', __('Total duration'))];
 
    $report->setColumns($cols);

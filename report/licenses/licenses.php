@@ -37,7 +37,7 @@ include ("../../../../inc/includes.php");
 $dbu = new DbUtils();
 
 //TRANS: The name of the report = Detailed license report
-$report = new PluginReportsAutoReport(__('licenses_report_title', 'reports'));
+$report = new PluginReportsAutoReport(__('licenses_report_title', MyReports));
 
 $license = new PluginReportsSoftwareWithLicenseCriteria($report);
 
@@ -56,7 +56,7 @@ if ($report->criteriasValidated()
                         "nombre"  => _x('Quantity', 'Number'),
                         "type"    => __('Type'),
                         "buy"     => __('Purchase version'),
-                        "used"    => __('Used version', 'reports'),
+                        "used"    => __('Used version', MyReports),
                         "expire"  => __('Expiration'),
                         "comment" => __('Comments'),
                         "name"    => __('Computer')]);

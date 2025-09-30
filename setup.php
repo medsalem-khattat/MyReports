@@ -29,7 +29,7 @@
  --------------------------------------------------------------------------
 */
 
-include_once(Plugin::getPhpDir('reports')."/inc/function.php");
+include_once(Plugin::getPhpDir(MyReports)."/inc/function.php");
 
 define ("REPORTS_NO_ENTITY_RESTRICTION", 0);
 define ("REPORTS_CURRENT_ENTITY", 1);
@@ -39,7 +39,7 @@ define ("REPORTS_SUB_ENTITIES", 2);
 function plugin_init_reports() {
    global $PLUGIN_HOOKS, $DB, $LANG;
 
-   $PLUGIN_HOOKS['csrf_compliant']['reports'] = true;
+   $PLUGIN_HOOKS['csrf_compliant'][MyReports] = true;
 
    $plugin = new plugin;
 
@@ -51,17 +51,17 @@ function plugin_init_reports() {
    Plugin::registerClass('PluginReportsProfile', ['addtabon' => ['Profile']]);
 
    if (Session::haveRight("config", UPDATE)) {
-      $PLUGIN_HOOKS['config_page']['reports']     = 'front/report.form.php';
+      $PLUGIN_HOOKS['config_page'][MyReports]     = 'front/report.form.php';
    }
 
-   $PLUGIN_HOOKS['menu_entry']['reports'] = false;
+   $PLUGIN_HOOKS['menu_entry'][MyReports] = false;
 
    $rightreport = [];
    $rightstats  = [];
 
    foreach (searchReport() as $report => $plug) {
       $field = 'plugin_reports_'.$report;
-      if ($plug != 'reports') {
+      if ($plug != MyReports) {
          $field = 'plugin_reports_'.$plug."_".$report;
       }
       if (Session::haveRight($field, READ)) {
@@ -74,10 +74,10 @@ function plugin_init_reports() {
             }
             $PLUGIN_HOOKS['stats'][$plug]["report/$report/$report.php"] = $tmp;
          } else {
-            if (!isset($PLUGIN_HOOKS['reports'][$plug])) {
-               $PLUGIN_HOOKS['reports'][$plug] = [];
+            if (!isset($PLUGIN_HOOKS[MyReports][$plug])) {
+               $PLUGIN_HOOKS[MyReports][$plug] = [];
             }
-            $PLUGIN_HOOKS['reports'][$plug]["report/$report/$report.php"] = $tmp;
+            $PLUGIN_HOOKS[MyReports][$plug]["report/$report/$report.php"] = $tmp;
          }
       }
    }
