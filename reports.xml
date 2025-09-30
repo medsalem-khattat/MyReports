@@ -30,7 +30,7 @@
       <version>
           <num>1.0.0</num>
           <compatibility>~10.0.0</compatibility>
-          <download_url>https://github.com/medsalem-khattat/MyReports/releases/download/v1.0.0/MyReports-1.0.0.zip</download_url>
+          <download_url>https://github.com/medsalem-khattat/MyReports/archive/refs/heads/main.zip</download_url>
       </version>
     </versions>
    <langs>
