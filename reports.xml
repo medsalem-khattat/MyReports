@@ -1,10 +1,50 @@
-<plugin>
-  <name>MyReports</name>
-  <version>1.0.0</version>
-  <glpi_min>10.0.0</glpi_min>
-  <glpi_max>10.99.99</glpi_max>
-  <author>Mohamed Salem KHATTAT</author>
-  <license>AGPL-3.0</license>
-  <homepage>https://github.com/medsalem-khattat/MyReports</homepage>
-  <description>Custom GLPI Reports </description>
-</plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <name>MyReports</name>
+   <key>myreports</key>
+   <state>stable</state>
+   <logo>https://raw.githubusercontent.com/medsalem-khattat/MyReports/master/report_page.png</logo>
+   <description>
+      <short>
+         <fr><![CDATA[Rapports. Ce plugin fournit des rapports supplémentaires. Il permet également 
+         d’ajouter très facilement de nouveaux rapports.]]></fr>
+         <en><![CDATA[Reports. This plugin enables additional reports. It also allows you to add new 
+         reports in a simple way.]]></en>
+      </short>
+      <long>
+         <fr><![CDATA[Ce plugin fournit des rapports supplémentaires.<br />Fonctionnalités principales :<br />
+         - Il permet d’ajouter très facilement de nouveaux rapports (via l’ajout d’un fichier PHP pour le rapport et un fichier de langue associé).<br />
+         - Il prend en charge la gestion des droits de tout nouveau rapport ajouté.<br />
+         - Il fournit quelques rapports (pour exemple)<br />]]></fr>
+         <en><![CDATA[This plugin enables additional reports.<br />Main features:<br />
+         - It allows you to add new reports easily (one PHP file per report plus a translation file).<br />
+         - It handles rights for each new report.<br />
+         - It provides several example reports:<br />]]></en>
+      </long>
+   </description>
+   <homepage>https://github.com/medsalem-khattat/MyReports</homepage>
+   <download>https://github.com/medsalem-khattat/MyReports/releases</download>
+   <authors>
+      <author>Your Name</author>
+   </authors>
+   <versions>
+      <version>
+          <num>1.0.0</num>
+          <compatibility>~10.0.0</compatibility>
+          <download_url>https://github.com/medsalem-khattat/MyReports/releases/download/v1.0.0/MyReports-1.0.0.zip</download_url>
+      </version>
+    </versions>
+   <langs>
+      <lang>fr_FR</lang>
+      <lang>en_GB</lang>
+   </langs>
+   <license><![CDATA[GPL v3+]]></license>
+   <tags>
+      <fr>
+         <tag>Rapports</tag>
+      </fr>
+      <en>
+         <tag>Reports</tag>
+      </en>
+   </tags>
+</root>
